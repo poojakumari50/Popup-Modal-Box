@@ -1,0 +1,111 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+html,body{
+    height: 100%;
+    width: 100%;
+}
+.show-button{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    height: 55px;
+    background-color: royalblue;
+    padding: 0 30px;
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 55px;
+    cursor: pointer;
+    color: white;
+    border-radius: 10px;
+    transition: all 0.3s ease;
+}
+.show-button:hover{
+    background-color: crimson;
+}
+.background{
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    opacity: 0;
+    pointer-events: none;
+    transition: all 0.3s ease;
+}
+#check:checked ~ .background{
+    opacity: 1;
+    pointer-events: auto;
+}
+.alert-box{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    max-width: 400px;
+    width: 100%;
+    background-color: white;
+    padding: 50px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    border-radius: 10px;
+    z-index: 5;
+    opacity: 0;
+    pointer-events: none;
+    transform: translate(-50%, -50%) scale(0.97);
+    transition: all 0.3s ease;
+}
+#check{
+    display: none;
+}
+#check:checked ~ .alert-box{
+    opacity: 1;
+    pointer-events: none;
+    transform: translate(-50%, -50%) scale(1);
+}
+.alert-box i{
+    color: crimson;
+    font-size: 100px;
+}
+.alert-box header{
+    font-size: 35px;
+    font-weight: 500;
+    margin: 10px 0;
+}
+.alert-box p{
+    font-size: 20px;
+}
+.alert-box .btns{
+    margin-top: 20px;
+}
+.alert-box label{
+    display: inline-flex;
+
+    background-color: grey;
+    padding: 0 30px;
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 55px;
+    cursor: pointer;
+    color: white;
+    border-radius: 5px;
+}
+.btns label:first-child{
+    background-color: royalblue
+}
+.btns label:first-child:hover{
+    background-color: rgb(116, 150, 255);
+}
+.btns label:last-child{
+    background-color: crimson;
+}
+.btns label:last-child:hover{
+    background-color: rgb(255, 124, 150);
+}
